@@ -3,7 +3,7 @@ import mss
 import numpy as np
 import pygetwindow as gw
 from replace_straining_colorss2 import replace_straining_colors
-
+from replace_straining_colorsrgb import replace_straining_colors_rgb
 def capture_window_seamlessly(window_title):
     """
     Captures the content of a specific window in real-time using MSS.
@@ -54,8 +54,8 @@ def capture_window_seamlessly(window_title):
                 frame = cv2.cvtColor(frame, cv2.COLOR_BGRA2BGR)
                 
                 # 6. Apply the color filter
-                processed_frame = replace_straining_colors(frame)
-                
+                #processed_frame = replace_straining_colors(frame)
+                processed_frame = replace_straining_colors_rgb(frame)               
                 # 7. Display the captured window content
                 cv2.imshow(f"Mirroring: {window_title}", processed_frame)
             
