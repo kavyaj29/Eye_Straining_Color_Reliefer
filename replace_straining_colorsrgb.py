@@ -2,21 +2,6 @@ import cv2
 import numpy as np
 
 def replace_straining_colors_rgb(image: np.ndarray) -> np.ndarray:
-    """
-    Transforms an image by desaturating highly vibrant colors using only the BGR 
-    (RGB) color space.
-
-    NOTE: This approach is a replacement for the HSV logic and attempts to mimic 
-    desaturation by pulling the R, G, and B components closer to the pixel's average 
-    brightness (Luminance).
-
-    Args:
-        image: A NumPy array representing the image frame in BGR format (cv2 standard).
-
-    Returns:
-        A NumPy array of the processed image frame in BGR format.
-    """
-
     # 1. Convert BGR to float32 for precise calculation
     # The image is expected to be in BGR format (standard for OpenCV).
     bgr_float = image.astype(np.float32)
